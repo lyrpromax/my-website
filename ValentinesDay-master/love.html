@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>刘裕荣 Love 吕单单</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">##</span><br/>
+			<span class="comments"># 亲爱的吕单单女士，你好</span><br/>
+			<span class="comments"> 我是一个非常直男的程序员，以下是我想对你说的一些话</span><br/>
+			<span class="comments"># 首先，我非常荣幸的能成为你的丈夫， </span><br/>
+			<span class="comments">我想这一定是我上辈子修来的福分。</span><br/>
+			<span class="comments"># 我们相识于2018年5月</span><br/>
+			<span class="comments"># 结婚与2020年6月.</span><br/>
+			<span class="comments"># 我们一起走过了五个年头.</span><br/>
+			<span class="comments"># 这五年来.我们之间确实经常发生了争吵.</span><br/>
+			<span class="comments"># 但是我明白，彼此都已经是对方内心中不可缺少的一部分了.</span><br/>
+			<span class="comments"># 这几年你对家庭的付出，我心里都明白</span><br/>
+			<span class="comments"># 但是好在日子都在一天天的变好</span><br/>
+			<span class="comments"># 我们有了一个可爱的baby。</span><br/>
+			<span class="comments"># 他的名字叫多米，今年已经三岁啦.</span><br/>
+			<span class="comments"># 我们有了一个属于自己的家，</span><br/>
+			<span class="comments"># 有了自己的房子，还有一个心爱的你.</span><br/>
+			<span class="comments"># 其实写到这里，我还有很多想说的，很多很多。</span><br/>
+			<span class="comments">##</span><br/>
+			<span class="comments">#总之</span><br/>
+			<span class="comments">#这辈子找到你是最幸运的事情，也是最值得珍惜的人。</span><br/>
+			<span class="comments">#谢谢你老婆，你辛苦了，陪伴我这么久。</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					吕单单女士，我爱你
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					永远永远<br/>
+					<div class="signature">- 刘裕荣 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2018, 6, 23);
+	together.setHours(15);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
